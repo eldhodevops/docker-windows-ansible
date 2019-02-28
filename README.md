@@ -90,5 +90,9 @@ ansible-playbook -i inventory/docker.ini run-docker-windows.yml
 ```
 You will be able to view contents of index.htm as provided in contents folder, try  server IP:8011 to view via browser!!
 
+If you wish to use any other webserer, just edit "run-iis-container/roles/windows/iis/templates/Dockerfile-iis-server.j2" the template and run.
+
+Also please make sure that you have updated the source_path to your local path in "run-iis-container/roles/windows/iis/defaults/main.yml" before run
+
 That's  it:)
 ===============================================================================================================================
