@@ -1,7 +1,7 @@
 # docker-windows-ansible
 Install docker on windows-server using Ansible script
 
-Docker installation on windows-server-2019
+Docker installation on windows-server and run iis contianer
 
 ## Prerequisites
 Ansible only:
