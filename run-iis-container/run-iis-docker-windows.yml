@@ -1,0 +1,16 @@
+- name: Run iis container on windows nodes
+  hosts: node-windows
+  environment: "{{ env_vars|default({}) }}"
+  gather_facts: no
+  tasks:
+    - import_role:
+        name: windows/version
+      tags:
+        - windows::requirements    
+    - import_role:
+        name: windows/iis
+      tags:
+        - windows::requirements
+        - windows::docker
+        - windows::test
+

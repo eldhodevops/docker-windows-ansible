@@ -1,0 +1,24 @@
+---
+
+- name: Gather all facts
+  hosts: all
+  gather_facts: no
+ # pre_tasks:
+  #  - import_role:
+   #     name: common/gather-facts
+
+- name: Install docker on windows node 
+  hosts: node-windows
+  environment: "{{ env_vars|default({}) }}"
+  gather_facts: no
+  tasks:
+    - import_role:
+        name: windows/common
+      tags:
+        - windows::requirements
+    - import_role:
+        name: windows/docker
+      tags:
+        - windows::requirements
+        - windows::docker
+
